@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services – Nayan Children Hospital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/images/logo-195x113.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="service-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+<a class="logo" href="index.html"><img src="assets/images/logo-195x113.png" alt="Nayan Children's Hospital"></a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+<nav id="nav" class="nav" aria-label="Site Navigation"><a href="index.html">Home</a><a class="active" href="services.html">Services</a><a href="equipment.html">Equipment’s</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact Us</a></nav>
+</div></header>
+<main id="main">
+<section class="service-hero" aria-label="Hospital services carousel"><div class="service-hero-track">
+<div class="service-hero-slide active"><img src="assets/images/services-hero.jpg" alt="24x7 Emergency Service"></div>
+<div class="service-hero-slide"><img src="assets/images/ns-1.jpg" alt="Nayan Children Hospital"></div>
+<div class="service-hero-slide"><img src="assets/images/ns-4.jpg" alt="Nayan Children Hospital services"></div>
+<div class="service-hero-slide"><img src="assets/images/juio.jpg" alt="Nayan Children Hospital care"></div>
+</div><button class="service-hero-nav service-hero-prev" type="button" aria-label="Previous slide">‹</button><button class="service-hero-nav service-hero-next" type="button" aria-label="Next slide">›</button><div class="service-hero-dots" aria-label="Hero slide controls"></div></section>
+<section class="service-band"><div class="service-band-inner"><h1>Services</h1><div class="service-divider"></div><h2>NICU (નિયોનેટલ આઇ.સી.યુ.)</h2><div class="service-text">
+<p>– અધુરા માસે / તાજા જન્મેલા / ઓછા વજન સાથે જન્મેલા બાળક માટે કાચની પેટીની સુવિધા</p><p>– જન્મ સમયે હાજર રહી નવજાત શિશુની ત્વરિત સંભાળની સુવિધા (બર્થ કોલ)</p><p>– કાંગારૂ કેર (મધર રૂમ) ની સુવિધા ઉપલબ્ધ</p><p>– Therapeutic Hypothermia (જન્મ થી રડયું ન હોય તેવા બાળકનાં શરીરને ઠડું રાખીને આપવામાં આવતી સારવાર ની સુવિધા)</p>
+</div></div></section>
+<section class="service-gallery" aria-label="NICU photos"><div class="service-gallery-inner">
+<figure><img src="assets/images/services-nicu-1.png" alt="NICU facility"></figure><figure><img src="assets/images/services-nicu-2.png" alt="Hospital room"></figure><figure><img src="assets/images/services-nicu-3.png" alt="NICU care facility"></figure><figure><img src="assets/images/services-nicu-4.png" alt="Hospital ward"></figure>
+</div></section>
+<section class="service-band service-band-second"><div class="service-band-inner"><h2>પિડ્રીયાટીક વિભાગ</h2><div class="service-divider"></div><div class="service-text">
+<p>– ૦–૧૮ વર્ષ નાં બાળકોનાં રોગોના સચોટ નિદાન અને સારવારની સુવિધા (OPD)</p><p>– તમામ પ્રકારની રસીકરણની સુવિધા</p><p>– મેડીકલેમ સુવિધા</p><p>– દાખલ દર્દીઓ માટે ડીલક્ષ, સેમી સ્પેશીયલ રૂમ, જનરલ વોર્ડની સુવિધા</p><p>– બાળકોને થતી વારંવાર બિમારીઓ જેવી કે , તાવ શરદી ઉધરસ / ઝાડાઉલ્ટી ની તપાસ અને યોગ્ય સારવાર</p><p>– અસ્થમા / ન્યુમોનિયા / વરાદનાં દર્દીઓ માટે નેબ્યુલાઈઝરની સુવિધા</p><p>– ઝેરી મેલેરીયા, ડેગ્યુ, કમળો, કમળી, ડાયાબીટીસ, મગજનો ચેપ, આંચકી જેવી ગંભીર બિમારીઓની સારવાર</p><p>– ઓપરેશન પહેલા અને પછી અપાતી સારવાર</p><p>– ૨૪ કલાક તાત્કાલિક સારવાર ઉપલબ્ધ</p>
+</div></div></section></main>
+<footer class="service-footer"><div class="service-footer-bottom">Copyright © 2026 <span>Nayan Children Hospital</span> | Powered by <span>Nayan Children Hospital</span></div></footer>
+<script src="assets/js/main.js"></script>
+<script>(()=>{const slides=[...document.querySelectorAll('.service-hero-slide')],dots=document.querySelector('.service-hero-dots'),prev=document.querySelector('.service-hero-prev'),next=document.querySelector('.service-hero-next');if(!slides.length||!dots)return;let current=0,timer;slides.forEach((_,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`Slide ${i+1}`);b.addEventListener('click',()=>show(i,true));dots.appendChild(b)});function show(i,restart=false){current=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle('active',n===current));[...dots.children].forEach((b,n)=>b.classList.toggle('active',n===current));if(restart)start()}function start(){clearInterval(timer);timer=setInterval(()=>show(current+1),5000)}prev?.addEventListener('click',()=>show(current-1,true));next?.addEventListener('click',()=>show(current+1,true));show(0);start()})();</script>
+</body></html>

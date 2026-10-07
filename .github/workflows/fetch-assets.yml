@@ -1,0 +1,45 @@
+name: Fetch website assets
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch original public assets
+        run: |
+          set -e
+          rm -rf /tmp/nayan-site
+          mkdir -p /tmp/nayan-site
+          wget --mirror --page-requisites --convert-links --adjust-extension --no-parent --timeout=30 --tries=2 -P /tmp/nayan-site https://nayanchildrenhospital.com/ || true
+          mkdir -p assets/images/gallery assets/css assets/js
+          find /tmp/nayan-site -type f \( -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.webp' -o -name '*.gif' \) -exec cp -n {} assets/images/ \; || true
+          find assets/images -type f -printf '%f\n' | while read name; do
+            case "$name" in
+              nh-5.png|nh-8.png|nh-93.png|nh1.png|nh2.png|nh3.png|nh4.png|nh6.png|nh7.png)
+                cp -f "assets/images/$name" "assets/images/gallery/$name" || true ;;
+            esac
+          done
+          test -f assets/images/logo-195x113.png || true
+
+      - name: Commit fetched assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/images
+          if git diff --cached --quiet; then
+            echo "No new assets to commit."
+          else
+            git commit -m "Fetch website image assets"
+            git push
+          fi
